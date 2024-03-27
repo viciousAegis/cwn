@@ -474,9 +474,6 @@ def main(args):
         with open(os.path.join(result_folder, 'curves.pkl'), 'wb') as handle:
             pickle.dump(curves, handle)
 
-    # save the model
-    torch.save(model.state_dict(), os.path.join(result_folder, 'model.pth'))
-    
     return curves
 
 

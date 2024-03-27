@@ -6,8 +6,8 @@ python -m exp.run_mol_exp \
   --stop_seed 9 \
   --exp_name cwn-zinc-small \
   --dataset ZINC \
-  --train_eval_period 20 \
-  --epochs 1000 \
+  --train_eval_period 10 \
+  --epochs 100 \
   --batch_size 128 \
   --drop_rate 0.0 \
   --drop_position lin2 \
