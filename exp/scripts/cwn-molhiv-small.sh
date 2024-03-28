@@ -3,7 +3,7 @@
 python -m exp.run_mol_exp \
   --device 0 \
   --start_seed 0 \
-  --stop_seed 9 \
+  --stop_seed 0 \
   --exp_name cwn-molhiv-small \
   --dataset MOLHIV \
   --model ogb_embed_sparse_cin \
@@ -20,7 +20,7 @@ python -m exp.run_mol_exp \
   --num_layers 2 \
   --emb_dim 48 \
   --batch_size 128 \
-  --epochs 150 \
+  --epochs 3 \
   --num_workers 2 \
   --preproc_jobs 32 \
   --task_type bin_classification \
