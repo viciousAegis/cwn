@@ -566,6 +566,7 @@ class Complex(object):
             An object of type CochainMessagePassingParams
         """
         if dim in self.cochains:
+            # print('Getting cochain params for dim {}'.format(dim))
             cells = self.cochains[dim]
             x = cells.x
             # Add up features

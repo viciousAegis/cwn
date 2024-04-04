@@ -1,0 +1,34 @@
+#!/bin/bash
+
+python -m exp.run_mol_exp \
+  --device 0 \
+  --start_seed 0 \
+  --stop_seed 1 \
+  --exp_name cin++-mutag-small \
+  --dataset MUTAG \
+  --model sparse_cin \
+  --include_down_adj \
+  --use_coboundaries True \
+  --indrop_rate 0.0 \
+  --drop_rate 0.5 \
+  --graph_norm bn \
+  --drop_position lin2 \
+  --nonlinearity relu \
+  --readout mean \
+  --final_readout sum \
+  --lr 0.0001 \
+  --lr_scheduler None \
+  --num_layers 2 \
+  --emb_dim 48 \
+  --batch_size 128 \
+  --epochs 100 \
+  --num_workers 2 \
+  --preproc_jobs 32 \
+  --task_type classification \
+  --eval_metric accuracy \
+  --max_dim 2  \
+  --max_ring_size 6 \
+  --init_method sum \
+  --train_eval_period 10 \
+  --use_edge_features \
+  --dump_curves

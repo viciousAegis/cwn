@@ -51,7 +51,8 @@ class TUDataset(InMemoryComplexDataset):
             init_method=init_method, include_down_adj=include_down_adj, cellular=cellular)
 
         self.data, self.slices = torch.load(self.processed_paths[0])
-            
+        
+        fold = 0
         self.fold = fold
         self.seed = seed
         train_filename = os.path.join(self.raw_dir, '10fold_idx', 'train_idx-{}.txt'.format(fold + 1))  

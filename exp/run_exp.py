@@ -98,6 +98,9 @@ def main(args):
             test_loader = DataLoader(dataset.get_split('test'), batch_size=args.batch_size,
                 shuffle=False, num_workers=args.num_workers, max_dim=dataset.max_dim)
 
+    print("DATASET")
+    print(dataset[0])
+
     # Automatic evaluator, takes dataset name as input
     evaluator = Evaluator(args.eval_metric, eps=args.iso_eps)
 
@@ -473,6 +476,13 @@ def main(args):
     if args.dump_curves:
         with open(os.path.join(result_folder, 'curves.pkl'), 'wb') as handle:
             pickle.dump(curves, handle)
+
+    # save the train and val loaders
+    with open(os.path.join(result_folder, 'train_loader.pkl'), 'wb') as handle:
+        pickle.dump(train_loader, handle)
+    
+    with open(os.path.join(result_folder, 'valid_loader.pkl'), 'wb') as handle:
+        pickle.dump(valid_loader, handle)
 
     # save the model
     torch.save(model.state_dict(), os.path.join(result_folder, 'model.pth'))
