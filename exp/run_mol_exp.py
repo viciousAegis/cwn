@@ -45,11 +45,11 @@ def exp_main(passed_args):
 
     # Extract results at the best validation epoch.
     best_epoch_train_results = [train_curves[i][best] for i, best in enumerate(best_idx)]
-    best_epoch_train_results = np.array(best_epoch_train_results, dtype=np.float)
+    best_epoch_train_results = np.array(best_epoch_train_results, dtype=float)
     best_epoch_val_results = [val_curves[i][best] for i, best in enumerate(best_idx)]
-    best_epoch_val_results = np.array(best_epoch_val_results, dtype=np.float)
+    best_epoch_val_results = np.array(best_epoch_val_results, dtype=float)
     best_epoch_test_results = [test_curves[i][best] for i, best in enumerate(best_idx)]
-    best_epoch_test_results = np.array(best_epoch_test_results, dtype=np.float)
+    best_epoch_test_results = np.array(best_epoch_test_results, dtype=float)
 
     # Compute stats for the best validation epoch
     mean_train_perf = np.mean(best_epoch_train_results)

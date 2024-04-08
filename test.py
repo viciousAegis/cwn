@@ -1,5 +1,4 @@
 from data.datasets.gxai import XAIDataset
 
-dataset = XAIDataset(name='Benzene')
-dataset.download()
-dataset.process()
+dataset = XAIDataset(root='data/datasets', name='Benzene')
+print(dataset.data)

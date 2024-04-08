@@ -12,4 +12,4 @@ from data.datasets.peptides_functional import PeptidesFunctionalDataset, load_pe
 from data.datasets.peptides_structural import PeptidesStructuralDataset, load_pep_s_graph_dataset
 from data.datasets.ringtransfer import RingTransferDataset, load_ring_transfer_dataset
 from data.datasets.ringlookup import RingLookupDataset, load_ring_lookup_dataset
-
+from data.datasets.gxai import XAIDataset

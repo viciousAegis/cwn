@@ -4,8 +4,8 @@ python -m exp.run_mol_exp \
   --device 0 \
   --start_seed 0 \
   --stop_seed 0 \
-  --exp_name cin++-mutag-small \
-  --dataset MUTAG \
+  --exp_name cin-benzene-small \
+  --dataset Benzene \
   --model sparse_cin \
   --include_down_adj \
   --use_coboundaries True \

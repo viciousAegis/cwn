@@ -24,6 +24,7 @@ THE SOFTWARE.
 """
 
 import os
+from data.datasets.gxai import XAIDataset
 import torch
 from torch.utils.data.dataloader import default_collate
 
@@ -113,7 +114,13 @@ class DataLoader(torch.utils.data.DataLoader):
 def load_dataset(name, root=os.path.join(ROOT_DIR, 'datasets'), max_dim=2, fold=0,
                  init_method='sum', n_jobs=2, **kwargs) -> ComplexDataset:
     """Returns a ComplexDataset with the specified name and initialised with the given params."""
-    if name.startswith('sr'):
+    if name == 'Benzene':
+        dataset = XAIDataset(os.path.join(root, 'BENZENE'), name, max_dim=max_dim, num_classes=2,
+            degree_as_tag=False, fold=fold, init_method=init_method, seed=0)
+    elif name == 'AlkaneCarbonyl':
+        dataset = XAIDataset(os.path.join(root, 'ALKANE-CARBONYL'), name, max_dim=max_dim, num_classes=2,
+            degree_as_tag=False, fold=fold, init_method=init_method, seed=0)
+    elif name.startswith('sr'):
         dataset = SRDataset(os.path.join(root, 'SR_graphs'), name, max_dim=max_dim,
             num_classes=16, max_ring_size=kwargs.get('max_ring_size', None),
             n_jobs=n_jobs, init_method=init_method)

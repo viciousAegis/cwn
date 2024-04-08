@@ -72,7 +72,7 @@ def load_graphs(datapath: str):
         data_i = Data(
             x = x,
             y = y,
-            edge_attr = edge_attr,
+            # edge_attr = edge_attr,
             edge_index = edge_index
         )
 
