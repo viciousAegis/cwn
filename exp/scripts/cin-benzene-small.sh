@@ -21,7 +21,7 @@ python -m exp.run_mol_exp \
   --num_layers 2 \
   --emb_dim 48 \
   --batch_size 128 \
-  --epochs 1 \
+  --epochs 100 \
   --num_workers 2 \
   --preproc_jobs 32 \
   --task_type classification \
